@@ -16,6 +16,8 @@ captures/
 android/**/src/main/jniLibs/
 android/**/generated/
 
+.kotlin/
+
 # --- Apple / Xcode ---
 xcuserdata/
 DerivedData/

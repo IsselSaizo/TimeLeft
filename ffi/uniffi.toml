@@ -1,0 +1,7 @@
+[bindings.kotlin]
+package_name = "app.timeleft.core"
+cdylib_name = "timeleft_ffi"
+
+[bindings.swift]
+module_name = "TimeLeftCore"
+ffi_module_name = "TimeLeftCoreFFI"

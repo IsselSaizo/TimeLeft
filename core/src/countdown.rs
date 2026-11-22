@@ -22,13 +22,14 @@ pub struct Countdown {
 }
 
 impl Countdown {
-    /// Angles of the counter-clockwise dial hands in degrees from 12 o'clock
-    /// (hour hand on a 24 h dial would be unusual, so a 12 h dial is used).
+    /// Dial hand angles in degrees clockwise from the top. The hour hand uses a 24-hour
+    /// dial (one turn = the rest of the current day). As time runs out the angles shrink,
+    /// so the hands move counter-clockwise.
     pub fn hand_angles(&self) -> (f64, f64, f64) {
         let s = self.seconds as f64 + self.millis as f64 / 1000.0;
         let m = self.minutes as f64 + s / 60.0;
-        let h = (self.hours % 12) as f64 + m / 60.0;
-        (h * 30.0, m * 6.0, s * 6.0)
+        let h = self.hours as f64 + m / 60.0;
+        (h * 15.0, m * 6.0, s * 6.0)
     }
 }
 
@@ -128,6 +129,6 @@ mod tests {
             seconds: 0,
             ..Default::default()
         };
-        assert_eq!(c.hand_angles(), (105.0, 180.0, 0.0));
+        assert_eq!(c.hand_angles(), (232.5, 180.0, 0.0));
     }
 }

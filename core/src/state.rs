@@ -258,9 +258,9 @@ impl State {
         reason: Reason,
         f: impl FnOnce(&mut State, &mut Op) -> Result<(), Error>,
     ) -> Result<&LedgerEntry, Error> {
-        if now < self.last_recalibration_ms {
-            return Err(Error::Invalid("clock went backwards".into()));
-        }
+        // A clock set back (by the user, or a test shift undone) must not break the state:
+        // treat "now" as no earlier than the last recorded change.
+        let now = now.max(self.last_recalibration_ms);
         let mut scratch = self.clone();
         let mut op = Op {
             tables,
@@ -646,6 +646,19 @@ mod tests {
             )
             .is_err()
         );
+    }
+
+    #[test]
+    fn clock_set_back_is_tolerated() {
+        let mut s = State::new(t(), profile(), &[HabitKind::Steps], now()).unwrap();
+        let (d1, t1) = day(1);
+        s.check_in(t(), d1, [(HabitKind::Steps, 9000.0)].into(), t1)
+            .unwrap();
+        let e = s
+            .check_in(t(), d1, [(HabitKind::Steps, 7000.0)].into(), t1 - DAY_MS)
+            .unwrap();
+        assert_eq!(e.ts_ms, t1);
+        assert_invariant(&s, t1);
     }
 
     #[test]

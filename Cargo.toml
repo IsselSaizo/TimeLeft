@@ -1,7 +1,7 @@
 [workspace]
 resolver = "3"
-members = ["core", "cli", "tools/lifetable-builder"]
-default-members = ["core", "cli"]
+members = ["core", "ffi", "cli", "tools/lifetable-builder", "tools/uniffi-bindgen"]
+default-members = ["core", "ffi", "cli"]
 
 [workspace.package]
 version = "0.1.0"

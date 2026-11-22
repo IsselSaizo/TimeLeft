@@ -10,5 +10,10 @@
 *.json text eol=lf
 Cargo.lock text eol=lf
 
+gradlew      text eol=lf
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
 *.bin  binary
+*.jar  binary
 *.png  binary

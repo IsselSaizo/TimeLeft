@@ -1,0 +1,15 @@
+[package]
+name = "timeleft-ffi"
+description = "UniFFI bindings (Kotlin / Swift) for the Time Left core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "timeleft_ffi"
+
+[dependencies]
+timeleft-core = { workspace = true, features = ["embedded-data"] }
+uniffi = "0.32"

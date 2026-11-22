@@ -14,13 +14,21 @@ Rewrite in progress. See [PLAN.md](PLAN.md).
 | Part | Tech | Status |
 |---|---|---|
 | Core (life tables, model, ledger) | Rust | ✅ done, with CLI |
-| Android phone | Kotlin + Jetpack Compose (via UniFFI) | planned |
+| Desktop preview (Windows) | Kotlin + Compose Multiplatform (via UniFFI) | ✅ for testing |
+| Android phone | Kotlin + Jetpack Compose (via UniFFI), same UI code | next |
 | Wear OS | Kotlin, Compose for Wear OS, complications, tiles | planned |
 | iOS / watchOS | SwiftUI (via UniFFI) | groundwork only |
 
 All data stays on the device. No server.
 
 How the numbers are computed: [docs/methodology.md](docs/methodology.md).
+
+## Desktop preview
+
+Double-click `run-desktop.cmd` (needs Rust and Java 25 — e.g. Android Studio's bundled JBR).
+The first start builds everything and takes a few minutes. The window and the CLI share one
+state file. *Ещё → Тестовое время* shifts the clock (+1 h / +1 day / +7 days) to simulate days
+of check-ins; *Удалить все данные* starts over.
 
 ## Try the core from a terminal
 
@@ -41,7 +49,11 @@ cargo run -p timeleft-cli -- explain
 | Path | What |
 |---|---|
 | `core/` | `timeleft-core`: life tables, survival model, risk factors, habits, ledger, countdown. No IO. |
+| `ffi/` | `timeleft-ffi`: UniFFI bindings (Kotlin now, Swift later) |
 | `cli/` | `timeleft` command-line front end |
+| `android/ui/src/` | Shared Compose UI (screens, theme, dial, Russian strings) |
+| `android/desktop/` | Desktop shell; `gradlew :desktop:run`, `gradlew :desktop:screenshots -Pstate=…` |
+| `tools/uniffi-bindgen/` | Binding generator pinned to the workspace UniFFI version |
 | `tools/lifetable-builder/` | UN WPP CSV → `data/lifetable.bin` (`cargo run -p lifetable-builder --release`) |
 | `data/` | `lifetable.bin` + attribution |
 | `testdata/` | WPP reference values and cross-platform test vectors |
