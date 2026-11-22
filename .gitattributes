@@ -1,2 +1,12 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+*.rs   text eol=lf
+*.toml text eol=lf
+*.kt   text eol=lf
+*.kts  text eol=lf
+*.swift text eol=lf
+*.md   text eol=lf
+
+*.bin  binary
+*.png  binary
