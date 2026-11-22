@@ -1,0 +1,17 @@
+[package]
+name = "timeleft-core"
+description = "Time Left core: life tables, survival model, habits, ledger, countdown formatting"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[features]
+default = ["embedded-data"]
+# Embed data/lifetable.bin into the library (LifeTables::embedded()).
+embedded-data = []
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true

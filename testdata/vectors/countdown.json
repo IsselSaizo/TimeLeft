@@ -1,0 +1,200 @@
+{
+  "cases": [
+    {
+      "end_ms": 3265313400000,
+      "expected": {
+        "days": 211,
+        "expired": false,
+        "hours": 3,
+        "millis": 750,
+        "minutes": 22,
+        "seconds": 56,
+        "years": 46
+      },
+      "name": "basic",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1795378023250,
+      "expected": {
+        "days": 0,
+        "expired": true,
+        "hours": 0,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 0
+      },
+      "name": "same_moment",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1795378023249,
+      "expected": {
+        "days": 0,
+        "expired": true,
+        "hours": 0,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 0
+      },
+      "name": "past",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1795378023251,
+      "expected": {
+        "days": 0,
+        "expired": false,
+        "hours": 0,
+        "millis": 1,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 0
+      },
+      "name": "one_ms",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1795464423249,
+      "expected": {
+        "days": 0,
+        "expired": false,
+        "hours": 23,
+        "millis": 999,
+        "minutes": 59,
+        "seconds": 59,
+        "years": 0
+      },
+      "name": "just_under_a_day",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1795464423250,
+      "expected": {
+        "days": 1,
+        "expired": false,
+        "hours": 0,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 0
+      },
+      "name": "exactly_a_day",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1924992000000,
+      "expected": {
+        "days": 0,
+        "expired": false,
+        "hours": 0,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 4
+      },
+      "name": "exactly_four_years",
+      "now_ms": 1798761600000,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1866974400000,
+      "expected": {
+        "days": 0,
+        "expired": false,
+        "hours": 0,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 1
+      },
+      "name": "leap_day_start",
+      "now_ms": 1835438400000,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1835413200000,
+      "expected": {
+        "days": 365,
+        "expired": false,
+        "hours": 5,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 0
+      },
+      "name": "leap_day_end",
+      "now_ms": 1803859200000,
+      "utc_offset_minutes": 0
+    },
+    {
+      "end_ms": 1830286800000,
+      "expected": {
+        "days": 364,
+        "expired": false,
+        "hours": 23,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 0
+      },
+      "name": "samara_new_year",
+      "now_ms": 1798754400000,
+      "utc_offset_minutes": 240
+    },
+    {
+      "end_ms": 3056879223250,
+      "expected": {
+        "days": 355,
+        "expired": false,
+        "hours": 17,
+        "millis": 0,
+        "minutes": 0,
+        "seconds": 0,
+        "years": 39
+      },
+      "name": "negative_offset",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": -300
+    },
+    {
+      "end_ms": 1890109480039,
+      "expected": {
+        "days": 0,
+        "expired": false,
+        "hours": 10,
+        "millis": 789,
+        "minutes": 17,
+        "seconds": 36,
+        "years": 3
+      },
+      "name": "half_hour_offset",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 330
+    },
+    {
+      "end_ms": 4951051200000,
+      "expected": {
+        "days": 364,
+        "expired": false,
+        "hours": 23,
+        "millis": 750,
+        "minutes": 52,
+        "seconds": 56,
+        "years": 99
+      },
+      "name": "century",
+      "now_ms": 1795378023250,
+      "utc_offset_minutes": 0
+    }
+  ],
+  "description": "countdown(now_ms, end_ms, utc_offset_minutes): calendar years, 24h days, h:m:s:ms"
+}

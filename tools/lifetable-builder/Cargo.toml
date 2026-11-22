@@ -1,0 +1,13 @@
+[package]
+name = "lifetable-builder"
+description = "Builds data/lifetable.bin from UN WPP 2024 complete life tables"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+csv = "1"
+flate2 = "1"
+serde_json.workspace = true
+timeleft-core.workspace = true

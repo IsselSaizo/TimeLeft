@@ -7,6 +7,8 @@
 *.kts  text eol=lf
 *.swift text eol=lf
 *.md   text eol=lf
+*.json text eol=lf
+Cargo.lock text eol=lf
 
 *.bin  binary
 *.png  binary

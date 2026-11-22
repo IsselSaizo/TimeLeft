@@ -1,0 +1,17 @@
+[package]
+name = "timeleft-cli"
+description = "Command-line front end for the Time Left core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[[bin]]
+name = "timeleft"
+path = "src/main.rs"
+
+[dependencies]
+timeleft-core = { workspace = true, features = ["embedded-data"] }
+serde_json.workspace = true
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }

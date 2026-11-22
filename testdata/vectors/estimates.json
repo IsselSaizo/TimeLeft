@@ -1,0 +1,199 @@
+{
+  "cases": [
+    {
+      "end_at_ms": 3478602669039,
+      "expected": {
+        "age": 30.855755650925982,
+        "clamped": false,
+        "ln_hr": 0.0,
+        "lower": 42.5956957594692,
+        "mean": 50.377949960620164,
+        "median": 53.33927906089932,
+        "upper": 61.15520909932137
+      },
+      "name": "world_unspecified_30",
+      "now_ms": 1795377600000,
+      "profile": {
+        "birth_date": "1996-01-15",
+        "country": "WLD",
+        "factors": {
+          "activity": null,
+          "alcohol_g_per_week": null,
+          "bmi": null,
+          "diabetes": null,
+          "heart_attack": null,
+          "sleep_hours": null,
+          "smoking": null,
+          "social": null,
+          "stroke": null
+        },
+        "sex": "unspecified"
+      }
+    },
+    {
+      "end_at_ms": 2473942441257,
+      "expected": {
+        "age": 45.38856604402098,
+        "clamped": false,
+        "ln_hr": 0.7665919580519259,
+        "lower": 11.002914271103336,
+        "mean": 22.404698222810122,
+        "median": 21.50286381449617,
+        "upper": 32.999723516403435
+      },
+      "name": "rus_male_smoker_45",
+      "now_ms": 1795377600000,
+      "profile": {
+        "birth_date": "1981-07-04",
+        "country": "RUS",
+        "factors": {
+          "activity": null,
+          "alcohol_g_per_week": 220.0,
+          "bmi": 29.0,
+          "diabetes": null,
+          "heart_attack": null,
+          "sleep_hours": null,
+          "smoking": {
+            "cigarettes_per_day": 20.0,
+            "status": "current"
+          },
+          "social": null,
+          "stroke": null
+        },
+        "sex": "male"
+      }
+    },
+    {
+      "end_at_ms": 3790061456165,
+      "expected": {
+        "age": 28.71197446445398,
+        "clamped": false,
+        "ln_hr": -0.40990729140181464,
+        "lower": 55.94320157782218,
+        "mean": 61.44863639404412,
+        "median": 63.20901512176608,
+        "upper": 69.11978833061669
+      },
+      "name": "tur_female_healthy_28",
+      "now_ms": 1795377600000,
+      "profile": {
+        "birth_date": "1998-03-08",
+        "country": "TUR",
+        "factors": {
+          "activity": {
+            "kind": "mvpa",
+            "minutes_per_week": 300.0
+          },
+          "alcohol_g_per_week": null,
+          "bmi": 22.0,
+          "diabetes": false,
+          "heart_attack": null,
+          "sleep_hours": 7.5,
+          "smoking": {
+            "status": "never"
+          },
+          "social": "strong",
+          "stroke": null
+        },
+        "sex": "female"
+      }
+    },
+    {
+      "end_at_ms": 2196693570915,
+      "expected": {
+        "age": 80.56519526980932,
+        "clamped": false,
+        "ln_hr": 0.0,
+        "lower": 8.00393543407317,
+        "mean": 12.561290362511134,
+        "median": 12.717196860938351,
+        "upper": 17.03420476606771
+      },
+      "name": "jpn_female_80",
+      "now_ms": 1795377600000,
+      "profile": {
+        "birth_date": "1946-05-01",
+        "country": "JPN",
+        "factors": {
+          "activity": null,
+          "alcohol_g_per_week": null,
+          "bmi": null,
+          "diabetes": null,
+          "heart_attack": null,
+          "sleep_hours": null,
+          "smoking": null,
+          "social": null,
+          "stroke": null
+        },
+        "sex": "female"
+      }
+    },
+    {
+      "end_at_ms": 2193545279962,
+      "expected": {
+        "age": 62.14729483379764,
+        "clamped": true,
+        "ln_hr": 1.6094379124341003,
+        "lower": 5.861848327940015,
+        "mean": 13.489118800672788,
+        "median": 12.617431492175582,
+        "upper": 20.303782520148218
+      },
+      "name": "usa_male_diseases_62",
+      "now_ms": 1795377600000,
+      "profile": {
+        "birth_date": "1964-09-30",
+        "country": "USA",
+        "factors": {
+          "activity": {
+            "kind": "steps",
+            "per_day": 4000.0
+          },
+          "alcohol_g_per_week": null,
+          "bmi": null,
+          "diabetes": true,
+          "heart_attack": true,
+          "sleep_hours": null,
+          "smoking": {
+            "quit_age": 50.0,
+            "status": "former"
+          },
+          "social": null,
+          "stroke": null
+        },
+        "sex": "male"
+      }
+    },
+    {
+      "end_at_ms": 3933987919918,
+      "expected": {
+        "age": 0.05977763631924908,
+        "clamped": false,
+        "ln_hr": 0.0,
+        "lower": 41.92893234053143,
+        "mean": 57.76124769172479,
+        "median": 67.76986319584579,
+        "upper": 78.89611765250038
+      },
+      "name": "nga_male_newborn",
+      "now_ms": 1795377600000,
+      "profile": {
+        "birth_date": "2026-11-01",
+        "country": "NGA",
+        "factors": {
+          "activity": null,
+          "alcohol_g_per_week": null,
+          "bmi": null,
+          "diabetes": null,
+          "heart_attack": null,
+          "sleep_hours": null,
+          "smoking": null,
+          "social": null,
+          "stroke": null
+        },
+        "sex": "male"
+      }
+    }
+  ],
+  "description": "model::estimate for fixed profiles (years from now); tolerance 1e-6 years"
+}
